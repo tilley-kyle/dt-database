@@ -1,11 +1,11 @@
 import React from 'react';
 import './components.css';
 
-const SearchBar = ({ onSearchClick, onChangedText }) => (
+const SearchBar = ({ onSearchClick, onTextInput }) => (
   <div className="search-bar">
     <input type="input" placeholder="Input Model ID"></input>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e)}}>Search Model</button>
-    <input type="input" placeholder="Input Serial ID" onChange={(e) => {onChangedText(e)}}></input>
+    <input type="input" placeholder="Input Serial ID" onChange={(e) => {console.log(e.target.value)}}></input>
     <button type="submit" value="Serial-ID" onClick={(e) => {onSearchClick(e)}}>Search Serial</button>
     <input type="input" placeholder="Input Dealer"></input>
     <button type="submit" value="Dealer" onClick={(e) => {onSearchClick(e)}}>Search Dealer</button>

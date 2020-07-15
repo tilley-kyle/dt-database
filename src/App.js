@@ -17,7 +17,7 @@ class App extends React.Component {
       searchInput: '',
     }
     this.onSearchClick = this.onSearchClick.bind(this);
-    this.onChangedText = this.onChangedText.bind(this);
+    this.onTextInput = this.onTextInput.bind(this);
   }
 
   componentDidMount() {
@@ -35,8 +35,9 @@ class App extends React.Component {
     }
   }
 
-  async onChangedText(e) {
-    console.log(e)
+  async onTextInput(e) {
+    e.preventDefault()
+    await console.log(e)
   }
 
   render() {
@@ -65,7 +66,7 @@ class App extends React.Component {
           currentResults={currentResults}
           totalResults={totalResults}
           onSearchClick={this.onSearchClick}
-          onChangedText={this.onChangedText}
+          onTextInput={this.onTextInput}
         />
       </div>
     );
