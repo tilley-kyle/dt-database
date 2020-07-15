@@ -13,14 +13,15 @@ class App extends React.Component {
       currentResults: [],
       totalResults: [],
       action: 'search',
-      searchCriteria: 'total',
+      searchCriteria: '',
       searchInput: '',
     }
     this.onSearchClick = this.onSearchClick.bind(this);
+    this.onChangedText = this.onChangedText.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ currentResults: dummyData });
+    this.setState({ totalResults: dummyData });
   }
 
   async onSearchInputClick(e) {
@@ -28,7 +29,14 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
-    console.log(e.target.value);
+    const results = [];
+    if (e.target.value === 'all') {
+      await this.setState({ currentResults: this.state.totalResults });
+    }
+  }
+
+  async onChangedText(e) {
+    console.log(e)
   }
 
   render() {
@@ -51,13 +59,14 @@ class App extends React.Component {
             <img className="banner-img" src={camproUSALogo} alt="campro usa logo" />
           </a>
         </div>
-          <Body
-            action={action}
-            searchCriteria={searchCriteria}
-            currentResults={currentResults}
-            totalResults={totalResults}
-            onSearchClick={this.onSearchClick}
-          />
+        <Body
+          action={action}
+          searchCriteria={searchCriteria}
+          currentResults={currentResults}
+          totalResults={totalResults}
+          onSearchClick={this.onSearchClick}
+          onChangedText={this.onChangedText}
+        />
       </div>
     );
   }

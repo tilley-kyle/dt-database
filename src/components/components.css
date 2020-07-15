@@ -19,7 +19,9 @@ button {
   position: relative;
   padding: 5px;
   border: 1px solid black;
-  width: 300px;
+  width: 275px;
+  margin-bottom: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
 }
 
 .even {
