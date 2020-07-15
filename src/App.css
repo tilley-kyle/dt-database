@@ -77,6 +77,9 @@
   font-size: 17px;
   line-height: 50px;
   text-align: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .search-input-item {
