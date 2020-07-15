@@ -4,11 +4,12 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = () => {
+const Results = ({ currentResults }) => {
   return (
     <div className="results-container">
       <SearchBar />
-      <Machine />
+      {currentResults.map((machine) => <Machine machine={machine} />
+      )}
     </div>
   )
 };

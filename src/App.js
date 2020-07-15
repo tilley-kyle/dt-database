@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentResults: {},
+      currentResults: [],
       action: 'search',
       searchCriteria: 'total',
       searchInput: '',
