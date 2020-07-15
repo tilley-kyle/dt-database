@@ -4,10 +4,10 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = ({ currentResults }) => {
+const Results = ({ currentResults, onSearchClick }) => {
   return (
     <div className="results-container">
-      <SearchBar />
+      <SearchBar onSearchClick={onSearchClick} />
       <div className="table-container">
         {currentResults.map((machine) => <Machine key={machine.Model} machine={machine} />
         )}

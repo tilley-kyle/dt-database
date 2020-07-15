@@ -11,10 +11,12 @@ class App extends React.Component {
     super(props)
     this.state = {
       currentResults: [],
+      totalResults: [],
       action: 'search',
       searchCriteria: 'total',
       searchInput: '',
     }
+    this.onSearchClick = this.onSearchClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +27,12 @@ class App extends React.Component {
     await this.setState({ action: e.target.id });
   }
 
+  async onSearchClick(e) {
+    console.log(e.target.value);
+  }
+
   render() {
-    const { action, searchCriteria, currentResults } = this.state;
+    const { action, searchCriteria, currentResults, totalResults } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -49,8 +55,9 @@ class App extends React.Component {
             action={action}
             searchCriteria={searchCriteria}
             currentResults={currentResults}
+            totalResults={totalResults}
+            onSearchClick={this.onSearchClick}
           />
-
       </div>
     );
   }

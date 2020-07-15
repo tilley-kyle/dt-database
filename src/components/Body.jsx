@@ -5,9 +5,9 @@ import './components.css';
 import Results from './Results';
 import Input from './Input';
 
-const Body = ({ action, searchCriteria, currentResults }) => {
+const Body = ({ action, searchCriteria, currentResults, totalResults, onSearchClick }) => {
   if (!action) return <div className="body-container">nothing clicked yet</div>
-  else if (action === 'search') return <Results currentResults={currentResults} />
+  else if (action === 'search') return <Results currentResults={currentResults} totalResults={totalResults} onSearchClick={onSearchClick} />
   else if (action === 'input') return <Input />
 
 }
