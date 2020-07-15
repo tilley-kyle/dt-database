@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import camproUSALogo from './images/Campro_USA_Blue_Logo.webp';
+import dummyData from './dummyData';
 
 class App extends React.Component {
   constructor(props) {
