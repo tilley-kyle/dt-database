@@ -26,7 +26,7 @@ const Machine = ({ machine })=> (
       </tr>
       <tr className="odd">
         <td className="title">TW Invoice Total</td>
-        <td>{machine['TW-Invoice-Total']}</td>
+        <td>${machine['TW-Invoice-Total']}</td>
       </tr>
       <tr className="even">
         <td className="title">Date Sold</td>
@@ -50,7 +50,7 @@ const Machine = ({ machine })=> (
       </tr>
       <tr className="odd">
         <td className="title">CUSA Invoice Total</td>
-        <td>{machine['CUSA-Invoice-Total']}</td>
+        <td>${machine['CUSA-Invoice-Total']}</td>
       </tr>
       <tr className="even">
         <td className="title">Date Paid</td>
@@ -58,27 +58,27 @@ const Machine = ({ machine })=> (
       </tr>
       <tr className="odd">
         <td className="title">Duty/Tarrif</td>
-        <td>{machine['Duty/Tarrif']}</td>
+        <td>${machine['Duty/Tarrif']}</td>
       </tr>
       <tr className="even">
         <td className="title">Port Handling</td>
-        <td>{machine['Port-Handling']}</td>
+        <td>${machine['Port-Handling']}</td>
       </tr>
       <tr className="odd">
         <td className="title">Devaning</td>
-        <td>{machine.Devaning}</td>
+        <td>${machine.Devaning}</td>
       </tr>
       <tr className="even">
         <td className="title">Other Handling</td>
-        <td>{machine['Other-Handling']}</td>
+        <td>${machine['Other-Handling']}</td>
       </tr>
       <tr className="odd">
         <td className="title">Total Landed</td>
-        <td>{machine['Total-Landed']}</td>
+        <td>${machine['Total-Landed']}</td>
       </tr>
       <tr className="even">
         <td className="title">Gross Profit</td>
-        <td>{machine['Gross-Profit']}</td>
+        <td>${machine['Gross-Profit']}</td>
       </tr>
     </table>
   </div>
