@@ -9,6 +9,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       currentResults: {},
+      action: '',
       searchCriteria: 'total',
       searchInput: '',
     }
@@ -18,12 +19,8 @@ class App extends React.Component {
 
   }
 
-  onSearchClick(e, value) {
-    console.log('search: ', e.target.id);
-  }
-
-  onInputClick(e) {
-    console.log('input: ', e.target.id);
+  async onSearchInputClick(e) {
+    await this.setState({ action: e.target.id });
   }
 
   render() {
@@ -36,8 +33,8 @@ class App extends React.Component {
         </div>
         <div className="banner">
           <div className="search-input">
-            <div className="search item" id="search" onClick={(e) => this.onSearchClick(e)}>Search</div>
-            <div className="input item" id="input" onClick={(e) => this.onInputClick(e)}>Input</div>
+            <div className="search item" id="search" onClick={(e) => this.onSearchInputClick(e)}>Search</div>
+            <div className="input item" id="input" onClick={(e) => this.onSearchInputClick(e)}>Input</div>
           </div>
         </div>
         <a href="https://www.campro-usa.com/">
