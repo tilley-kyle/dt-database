@@ -11,6 +11,7 @@ const SearchBar = () => (
     <button type="submit">Search Dealer</button>
     <input type="input" placeholder="Input End User"></input>
     <button type="submit">Search End User</button>
+    <button type="submit">All Sales</button>
   </div>
 );
 
