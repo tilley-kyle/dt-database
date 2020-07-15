@@ -28,8 +28,8 @@ class App extends React.Component {
         </div>
         <div className="banner">
           <div className="search-input">
-            <div className="search-input-item">Search</div>
-            <div className="search-input-item">Input</div>
+            <div className="search item">Search</div>
+            <div className="input item">Input</div>
           </div>
         </div>
         <a href="https://www.campro-usa.com/">
