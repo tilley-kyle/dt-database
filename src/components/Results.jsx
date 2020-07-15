@@ -8,7 +8,7 @@ const Results = ({ currentResults }) => {
   return (
     <div className="results-container">
       <SearchBar />
-      {currentResults.map((machine) => <Machine machine={machine} />
+      {currentResults.map((machine) => <Machine key={machine.Model}machine={machine} />
       )}
     </div>
   )
