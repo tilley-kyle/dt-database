@@ -14,6 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="banner-container">
+        <div className="banner"></div>
         <img className="banner-img" src={camproUSALogo} alt="campro usa logo" />
       </div>
     );
