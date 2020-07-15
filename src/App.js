@@ -4,14 +4,14 @@ import './App.css';
 import camproUSALogo from './images/Campro_USA_Blue_Logo.webp';
 import dummyData from './dummyData';
 
-import Results from './components/Results';
+import Body from './components/Body';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       currentResults: {},
-      action: '',
+      action: 'search',
       searchCriteria: 'total',
       searchInput: '',
     }
@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { action, searchCriteria, currentResults } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -44,9 +45,12 @@ class App extends React.Component {
             <img className="banner-img" src={camproUSALogo} alt="campro usa logo" />
           </a>
         </div>
-        <div className="body=container">
-          <Results />
-        </div>
+          <Body
+            action={action}
+            searchCriteria={searchCriteria}
+            currentResults={currentResults}
+          />
+
       </div>
     );
   }

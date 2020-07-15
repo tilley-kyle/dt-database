@@ -1,7 +1,14 @@
 import React from 'react';
+import './components.css';
 
-const Results = () => (
-  <div>hi</div>
-);
+import SearchBar from './SearchBar';
+
+const Results = () => {
+  return (
+    <div className="results-container">
+      <SearchBar />
+    </div>
+  )
+};
 
 export default Results;
