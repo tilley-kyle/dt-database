@@ -1,9 +1,55 @@
-.total-container {
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(fonts/Montserrat/Montserrat-Regular.ttf);
+}
 
+@font-face{
+  font-family: Montserrat-Medium;
+  src: url(fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+.total-container {
+  width: 100%;
+  min-width: 980px;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .banner-container {
-  
+  width: 100%;
+  min-width: 980px;
+  height: auto;
+}
+
+.contact-container {
+  position: absolute;
+  color: #FF0000;
+  height: 20.8px;
+  margin: 0px;
+  font: 71px Montserrat-Regular, sans-serif;
+  font-size: 17px;
+  top: 5px;
+  left: 704px;
+}
+
+.call-today {
+ display: inline-block;
+ margin: 0px;
+ letter-spacing: 0.05em;
+ margin-right: .35em;
+}
+
+.phone-number {
+  display: inline-block;
+  margin: 0px;
+  letter-spacing: 0.05em;
+  font-family: Montserrat-Medium;
+}
+
+.dealer {
+  color: #FF0000;
+  display: inline-block;
+  margin: 0px;
 }
 
 .banner-img {
