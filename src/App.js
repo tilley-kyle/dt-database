@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       currentResults: [],
       totalResults: [],
-      action: 'search',
+      action: '',
       searchCriteria: '',
       searchInput: '',
     }
