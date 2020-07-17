@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
-    const results = [];
+    // const results = [];
     if (e.target.value === 'all') {
       await this.setState({ currentResults: this.state.totalResults });
     }
