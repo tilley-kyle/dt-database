@@ -55,7 +55,7 @@ class App extends React.Component {
   async onNewMachineInput(e) {
     const { newInput } = this.state;
     newInput[e.target.id] = e.target.value;
-    await this.setState(newInput);
+    await this.setState({ newInput: newInput });
   }
 
   render() {
