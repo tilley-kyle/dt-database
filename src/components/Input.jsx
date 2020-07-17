@@ -9,9 +9,9 @@ const Input = ({ onNewMachineInput }) => (
       <input className="input-field" type="input" placeholder="Taiwan Invoice Number" id="TW-Invoice-Number" onChange={(e) => onNewMachineInput(e)} />
       <input className="input-field" type="input" placeholder="Taiwan Invoice Date" id="TW-Invoice-Date" onChange={(e) => onNewMachineInput(e)} />
       <input className="input-field" type="input" placeholder="Taiwan Invoice Total" id="TW-Invoice-Total" onChange={(e) => onNewMachineInput(e)} />
-      <input className="input-field" type="input" placeholder="CamproUSA Invoice Number" id="CUSA-Invoice-Number" onChange={(e) => onNewMachineInput(e)} />
-      <input className="input-field" type="input" placeholder="CamproUSA Invoice Date" id="CUSA-Invoice-Date" onChange={(e) => onNewMachineInput(e)} />
-      <input className="input-field" type="input" placeholder="CamproUSA Invoice Total" id="CUSA-Invoice-Total" onChange={(e) => onNewMachineInput(e)} />
+      <input className="input-field" type="input" placeholder="CUSA Invoice Number" id="CUSA-Invoice-Number" onChange={(e) => onNewMachineInput(e)} />
+      <input className="input-field" type="input" placeholder="CUSA Invoice Date" id="CUSA-Invoice-Date" onChange={(e) => onNewMachineInput(e)} />
+      <input className="input-field" type="input" placeholder="CUSA Invoice Total" id="CUSA-Invoice-Total" onChange={(e) => onNewMachineInput(e)} />
       <input className="input-field" type="input" placeholder="Dealer" id="Dealer" onChange={(e) => onNewMachineInput(e)} />
       <input className="input-field" type="input" placeholder="End User" id="End-User" onChange={(e) => onNewMachineInput(e)} />
       <input className="input-field" type="input" placeholder="Date Sold" id="Date-Sold" onChange={(e) => onNewMachineInput(e)} />
