@@ -25,11 +25,11 @@ button {
 }
 
 .even {
-  background-color: white;
+  background-color: lightgray;
 }
 
 .odd {
-  background-color: lightgray;
+  background-color: white;
 }
 
 .title {

@@ -32,7 +32,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
             <th>Gross Profit</th>
           </tr>
         </thead>
-        {currentResults.map((machine) => <Machine key={machine.counter} machine={machine} />
+        {currentResults.map((machine, i) => <Machine key={i} inc={i} machine={machine} />
         )}
       </table>
     </div>
