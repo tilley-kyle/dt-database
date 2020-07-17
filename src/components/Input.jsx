@@ -4,9 +4,9 @@ import './components.css';
 import totalLandedCalc from '../helperFunctions/totalLandedCalc';
 import grossProfitCalc from '../helperFunctions/grossProfitCalc';
 
-const Input = ({ onNewMachineInput, newInput }) => {
+const Input = ({ onNewMachineInput, newInput, onSubmitData }) => {
   const totalLanded = totalLandedCalc(newInput);
-  const grossProfit = grossProfitCalc(newInput, totalLanded);
+  const grossProfit = grossProfitCalc(newInput, totalLanded) ? grossProfitCalc(newInput, totalLanded) : 0;
   return (
     <div className="input-container">
       <div className="field-container">
@@ -30,7 +30,7 @@ const Input = ({ onNewMachineInput, newInput }) => {
       <div className="total-submit">
         <p className="totals">Total Landed is ${totalLanded}</p>
         <p className="totals">Gross Profit is ${grossProfit}</p>
-        <button type="submit">Submit Data</button>
+        <button type="submit" onClick={(e) => onSubmitData(e)}>Submit Data</button>
       </div>
     </div>
   );

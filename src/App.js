@@ -21,6 +21,7 @@ class App extends React.Component {
     this.onSearchClick = this.onSearchClick.bind(this);
     this.onTextInput = this.onTextInput.bind(this);
     this.onNewMachineInput = this.onNewMachineInput.bind(this);
+    this.onSubmitData = this.onSubmitData.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +59,12 @@ class App extends React.Component {
     await this.setState({ newInput: newInput });
   }
 
+  async onSubmitData(e) {
+    e.preventDefault();
+    const { totalResults, newInput } = this.state;
+    await this.setState({ totalResults: [...totalResults, newInput ]});
+  }
+
   render() {
     const { action, searchCriteria, currentResults, totalResults, newInput } = this.state;
     return (
@@ -87,6 +94,7 @@ class App extends React.Component {
           onTextInput={this.onTextInput}
           onNewMachineInput={this.onNewMachineInput}
           newInput={newInput}
+          onSubmitData={this.onSubmitData}
         />
       </div>
     );
