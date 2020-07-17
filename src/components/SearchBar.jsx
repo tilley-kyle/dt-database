@@ -6,7 +6,7 @@ const SearchBar = ({ onSearchClick, onTextInput }) => (
     <input type="input" placeholder="Input Model ID"></input>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e)}}>Search Model</button>
     <input type="input" placeholder="Input Serial ID" onChange={(e) => {onTextInput(e)}}></input>
-    <button type="submit" value="Serial-ID" onClick={(e) => {onSearchClick(e)}}>Search Serial</button>
+    <button type="submit" value="Serial-Number" onClick={(e) => {onSearchClick(e)}}>Search Serial</button>
     <input type="input" placeholder="Input Dealer"></input>
     <button type="submit" value="Dealer" onClick={(e) => {onSearchClick(e)}}>Search Dealer</button>
     <input type="input" placeholder="Input End User"></input>

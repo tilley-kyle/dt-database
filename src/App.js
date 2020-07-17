@@ -12,8 +12,7 @@ class App extends React.Component {
     this.state = {
       currentResults: [],
       totalResults: [],
-      action: '',
-      searchCriteria: '',
+      action: 'search',
       searchInput: '',
     }
     this.onSearchClick = this.onSearchClick.bind(this);
@@ -29,15 +28,26 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
-    // const results = [];
+    const { totalResults, searchInput } = this.state;
+    const results = [];
     if (e.target.value === 'all') {
       await this.setState({ currentResults: this.state.totalResults });
+      return;
+    } else {
+      totalResults.forEach((item) => {
+        console.log(e.target.value)
+        if (item[e.target.value] == searchInput) {
+          console.log('here')
+          results.push(item);
+        }
+      });
     }
+    this.setState({ currentResults: results });
   }
 
   async onTextInput(e) {
-    e.preventDefault()
-    await console.log(e)
+    e.preventDefault();
+    await this.setState({ searchInput: e.target.value });
   }
 
   render() {
