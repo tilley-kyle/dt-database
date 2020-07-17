@@ -54,15 +54,18 @@ class App extends React.Component {
   }
 
   async onNewMachineInput(e) {
-    const { newInput } = this.state;
+    const { newInput, action } = this.state;
+    if (action === 'input') {
+      // this.setState({ action: 'inputting' });
+    }
     newInput[e.target.id] = e.target.value;
     await this.setState({ newInput: newInput });
   }
 
   async onSubmitData(e) {
-    e.preventDefault();
+    // e.preventDefault();
     const { totalResults, newInput } = this.state;
-    await this.setState({ totalResults: [...totalResults, newInput ]});
+    await this.setState({ totalResults: [...totalResults, newInput ], action: 'input' });
   }
 
   render() {
