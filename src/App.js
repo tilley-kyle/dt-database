@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       currentResults: [],
       totalResults: [],
-      action: 'input',
+      pageToDisplay: 'home',
       searchInput: '',
       newInput: {},
     }
@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   async onSearchInputClick(e) {
-    await this.setState({ action: e.target.id });
+    await this.setState({ pageToDisplay: e.target.id });
   }
 
   async onSearchClick(e) {
@@ -54,22 +54,20 @@ class App extends React.Component {
   }
 
   async onNewMachineInput(e) {
-    const { newInput, action } = this.state;
-    if (action === 'input') {
-      // this.setState({ action: 'inputting' });
-    }
+    const { newInput } = this.state;
     newInput[e.target.id] = e.target.value;
     await this.setState({ newInput: newInput });
   }
 
   async onSubmitData(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const { totalResults, newInput } = this.state;
-    await this.setState({ totalResults: [...totalResults, newInput ], action: 'input' });
+    alert('The data was successfully added')
+    await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
   }
 
   render() {
-    const { action, searchCriteria, currentResults, totalResults, newInput } = this.state;
+    const { pageToDisplay, searchCriteria, currentResults, totalResults, newInput } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -89,7 +87,7 @@ class App extends React.Component {
           </a>
         </div>
         <Body
-          action={action}
+          pageToDisplay={pageToDisplay}
           searchCriteria={searchCriteria}
           currentResults={currentResults}
           totalResults={totalResults}
