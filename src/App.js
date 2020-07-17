@@ -7,6 +7,8 @@ import dummyData from './dummyData';
 import Body from './components/Body';
 
 import searchInputFormatter from './helperFunctions/searchInputFormatter';
+import totalLandedCalc from './helperFunctions/totalLandedCalc';
+import grossProfitCalc from './helperFunctions/grossProfitCalc';
 
 class App extends React.Component {
   constructor(props) {
@@ -62,7 +64,9 @@ class App extends React.Component {
   async onSubmitData(e) {
     e.preventDefault();
     const { totalResults, newInput } = this.state;
-    alert('The data was successfully added')
+    alert('The data was successfully added');
+    newInput['Total-Landed'] = totalLandedCalc(newInput);
+    newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
     await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
   }
 
