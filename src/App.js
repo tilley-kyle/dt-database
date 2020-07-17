@@ -14,11 +14,13 @@ class App extends React.Component {
     this.state = {
       currentResults: [],
       totalResults: [],
-      action: 'search',
+      action: 'input',
       searchInput: '',
+      newInput: {},
     }
     this.onSearchClick = this.onSearchClick.bind(this);
     this.onTextInput = this.onTextInput.bind(this);
+    this.onNewMachineInput = this.onNewMachineInput.bind(this);
   }
 
   componentDidMount() {
@@ -47,7 +49,11 @@ class App extends React.Component {
 
   async onTextInput(e) {
     e.preventDefault();
-    await this.setState({ searchInput: searchInputFormatter(e.target.value) });
+    await this.setState({ searchInput: e.target.value });
+  }
+
+  async onNewMachineInput(e) {
+    console.log(e.target.id)
   }
 
   render() {
@@ -77,6 +83,7 @@ class App extends React.Component {
           totalResults={totalResults}
           onSearchClick={this.onSearchClick}
           onTextInput={this.onTextInput}
+          onNewMachineInput={this.onNewMachineInput}
         />
       </div>
     );
