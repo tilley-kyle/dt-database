@@ -35,3 +35,17 @@ button {
 .title {
   padding-right: 5px;
 }
+
+.field-container {
+  display: inline-block;
+  padding: 20px;
+  padding-left: 65px;
+  width: auto;
+}
+
+.input-field {
+  position: relative;
+  display: block;
+  margin: 5px;
+  width: 175px;
+}
