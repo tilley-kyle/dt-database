@@ -6,6 +6,8 @@ import dummyData from './dummyData';
 
 import Body from './components/Body';
 
+import searchInputFormatter from './helperFunctions/searchInputFormatter';
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -33,21 +35,19 @@ class App extends React.Component {
     if (e.target.value === 'all') {
       await this.setState({ currentResults: this.state.totalResults });
       return;
-    } else {
-      totalResults.forEach((item) => {
-        console.log(e.target.value)
-        if (item[e.target.value] == searchInput) {
-          console.log('here')
-          results.push(item);
-        }
-      });
     }
+    totalResults.forEach((item) => {
+      console.log(e.target.value)
+      if (item[e.target.value] == searchInput) {
+        results.push(item);
+      }
+    });
     this.setState({ currentResults: results });
   }
 
   async onTextInput(e) {
     e.preventDefault();
-    await this.setState({ searchInput: e.target.value });
+    await this.setState({ searchInput: searchInputFormatter(e.target.value) });
   }
 
   render() {
