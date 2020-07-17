@@ -41,7 +41,6 @@ class App extends React.Component {
       return;
     }
     totalResults.forEach((item) => {
-      console.log(e.target.value)
       if (item[e.target.value] == searchInput) {
         results.push(item);
       }
