@@ -1,13 +1,16 @@
 import React from 'react';
 import './components.css';
 
-const Machine = ({ machine })=> (
+const Machine = ({ machine }) => (
   <div className='machine-container'>
     <table>
-      <tr>
-        <th className="field">Field</th>
-        <th className="value">Value</th>
-      </tr>
+      <thead>
+        <tr>
+          <th className="field">Field</th>
+          <th className="value">Value</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr className="odd">
         <td className="title">Model</td>
         <td>{machine.Model}</td>
@@ -80,6 +83,7 @@ const Machine = ({ machine })=> (
         <td className="title">Gross Profit</td>
         <td>${machine['Gross-Profit']}</td>
       </tr>
+      </tbody>
     </table>
   </div>
 );
