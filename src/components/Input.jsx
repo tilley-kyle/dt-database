@@ -2,10 +2,11 @@ import React from 'react';
 import './components.css';
 
 import totalLandedCalc from '../helperFunctions/totalLandedCalc';
+import grossProfitCalc from '../helperFunctions/grossProfitCalc';
 
 const Input = ({ onNewMachineInput, newInput }) => {
   const totalLanded = totalLandedCalc(newInput);
-  const grossProfit = parseInt(newInput['CUSA-Invoice-Total']) - totalLanded;
+  const grossProfit = grossProfitCalc(newInput, totalLanded);
   return (
     <div className="input-container">
       <div className="field-container">
