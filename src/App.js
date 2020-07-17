@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { action, searchCriteria, currentResults, totalResults } = this.state;
+    const { action, searchCriteria, currentResults, totalResults, newInput } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -86,6 +86,7 @@ class App extends React.Component {
           onSearchClick={this.onSearchClick}
           onTextInput={this.onTextInput}
           onNewMachineInput={this.onNewMachineInput}
+          newInput={newInput}
         />
       </div>
     );

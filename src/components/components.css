@@ -48,3 +48,13 @@ button {
   display: block;
   margin: 5px;
 }
+
+.total-submit {
+  position: relative;
+  display: inline-block;
+  bottom: 370px;
+}
+
+.totals {
+  margin: 0px;
+}
