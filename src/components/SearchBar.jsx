@@ -3,7 +3,7 @@ import './components.css';
 
 const SearchBar = ({ onSearchClick, onTextInput }) => (
   <div className="search-bar">
-    <input type="input" placeholder="Input Model ID"></input>
+    <input type="input" placeholder="Input Model ID" onChange={(e) => {onTextInput(e)}}></input>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e)}}>Search Model</button>
     <input type="input" placeholder="Input Serial ID" onChange={(e) => {onTextInput(e)}}></input>
     <button type="submit" value="Serial-Number" onClick={(e) => {onSearchClick(e)}}>Search Serial</button>
