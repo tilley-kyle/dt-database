@@ -1,9 +1,11 @@
 import React from 'react';
 import './components.css';
 
+import totalLandedCalc from '../helperFunctions/totalLandedCalc';
+
 const Input = ({ onNewMachineInput, newInput }) => {
-  const totalLanded = 0;
-  const grossProfit = 0;
+  const totalLanded = totalLandedCalc(newInput);
+  const grossProfit = parseInt(newInput['CUSA-Invoice-Total']) - totalLanded;
   return (
     <div className="input-container">
       <div className="field-container">
@@ -19,7 +21,7 @@ const Input = ({ onNewMachineInput, newInput }) => {
         <input className="input-field" type="input" placeholder="End User" id="End-User" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Date Sold" id="Date-Sold" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Date Paid" id="Date-Paid" onChange={(e) => onNewMachineInput(e)} />
-        <input className="input-field" type="input" placeholder="Duty/Tarrif" id="Duty/Tarrit" onChange={(e) => onNewMachineInput(e)} />
+        <input className="input-field" type="input" placeholder="Duty/Tarrif" id="Duty/Tarrif" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Port Handling" id="Port-Handling" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Devaning" id="Devaning" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Other Handling" id="Other-Handling" onChange={(e) => onNewMachineInput(e)} />
