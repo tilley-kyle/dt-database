@@ -12,24 +12,24 @@ button {
 
 .table-container {
   position: relative;
-  left: 50px;
+  left: 5px;
 }
 
 .machine-container {
   position: relative;
   padding: 5px;
   border: 1px solid black;
-  width: 275px;
+  width: auto;
   margin-bottom: 5px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
 }
 
 .even {
-  background-color: white;
+  background-color: lightgray;
 }
 
 .odd {
-  background-color: lightgray;
+  background-color: white;
 }
 
 .title {
