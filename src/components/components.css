@@ -47,6 +47,8 @@ button {
   position: relative;
   display: block;
   margin: 5px;
+  width: 165px;
+  padding: 3px;
 }
 
 .total-submit {
