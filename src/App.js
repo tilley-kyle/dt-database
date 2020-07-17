@@ -6,7 +6,6 @@ import dummyData from './dummyData';
 
 import Body from './components/Body';
 
-import searchInputFormatter from './helperFunctions/searchInputFormatter';
 import totalLandedCalc from './helperFunctions/totalLandedCalc';
 import grossProfitCalc from './helperFunctions/grossProfitCalc';
 
