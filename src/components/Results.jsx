@@ -11,25 +11,25 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
       <div className="machine-container">
       <table className="table-container">
         <thead>
-          <tr className="title">
-            <th>Model</th>
-            <th>Serial Number</th>
-            <th>TW Invoice Number</th>
-            <th>TW Invoice Date</th>
-            <th>TW Invoice Total</th>
-            <th>CUSA Invoice Number</th>
-            <th>CUSA Invoice Date</th>
-            <th>CUSA Invoice Total</th>
-            <th>Dealer</th>
-            <th>End User</th>
-            <th>Date Sold</th>
-            <th>Date Paid</th>
-            <th>Duty/Tarrif</th>
-            <th>Port Handling</th>
-            <th>Devaning</th>
-            <th>Other Handling</th>
-            <th>Total Landed</th>
-            <th>Gross Profit</th>
+          <tr className="title-box">
+            <th className="title">Model</th>
+            <th className="title">Serial Number</th>
+            <th className="title">TW Invoice Number</th>
+            <th className="title">TW Invoice Date</th>
+            <th className="title">TW Invoice Total</th>
+            <th className="title">CUSA Invoice Number</th>
+            <th className="title">CUSA Invoice Date</th>
+            <th className="title">CUSA Invoice Total</th>
+            <th className="title">Dealer</th>
+            <th className="title">End User</th>
+            <th className="title">Date Sold</th>
+            <th className="title">Date Paid</th>
+            <th className="title">Duty/ Tarrif</th>
+            <th className="title">Port Handling</th>
+            <th className="title">Devaning</th>
+            <th className="title">Other Handling</th>
+            <th className="title">Total Landed</th>
+            <th className="title">Gross Profit</th>
           </tr>
         </thead>
         {currentResults.map((machine, i) => <Machine key={i} inc={i} machine={machine} />

@@ -1,5 +1,6 @@
 .results-container {
   padding: 20px;
+  padding-left: 10px;
 }
 
 .search-bar {
@@ -12,7 +13,7 @@ button {
 
 .table-container {
   position: relative;
-  left: 5px;
+  left: 0px;
   border: 1px solid black;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
 }
@@ -20,13 +21,15 @@ button {
 .machine-container {
   position: relative;
   padding: 0px;
-  width: auto;
   margin-bottom: 5px;
 }
 
 .data-entry {
   font-size: 14px;
   padding: 0px 2px;
+  max-width: max-content;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .even {
@@ -37,8 +40,15 @@ button {
   background-color: white;
 }
 
+.title-box {
+  font-size: 14px;
+  word-spacing: 100vw;
+}
+
 .title {
-  font-size: 14px
+  max-width: max-content;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .field-container {
