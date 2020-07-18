@@ -11,7 +11,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
       <div className="machine-container">
       <table className="table-container">
         <thead>
-          <tr>
+          <tr className="title">
             <th>Model</th>
             <th>Serial Number</th>
             <th>TW Invoice Number</th>

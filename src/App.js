@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       currentResults: [],
       totalResults: [],
-      pageToDisplay: 'home',
+      pageToDisplay: 'search',
       searchInput: '',
       newInput: {},
     }
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ totalResults: dummyData });
+    this.setState({ totalResults: dummyData, currentResults: dummyData });
   }
 
   async onSearchInputClick(e) {

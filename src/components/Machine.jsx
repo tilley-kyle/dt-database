@@ -6,24 +6,24 @@ const Machine = ({ machine, inc }) => {
   return (
     <tbody>
       <tr className={tdClassName}>
-        <td >{machine['Model']}</td>
-        <td >{machine['Serial-Number']}</td>
-        <td >{machine['TW-Invoice-Number']}</td>
-        <td >{machine['TW-Invoice-Date']}</td>
-        <td >{machine['TW-Invoice-Total']}</td>
-        <td >{machine['CUSA-Invoice-Number']}</td>
-        <td >{machine['CUSA-Invoice-Date']}</td>
-        <td >{machine['CUSA-Invoice-Total']}</td>
-        <td >{machine['Dealer']}</td>
-        <td >{machine['End-User']}</td>
-        <td >{machine['Date-Sold']}</td>
-        <td >{machine['Date-Paid']}</td>
-        <td >{machine['Duty/Tarrif']}</td>
-        <td >{machine['Port-Handling']}</td>
-        <td >{machine['Devaning']}</td>
-        <td >{machine['Other-Handling']}</td>
-        <td >{machine['Total-Landed']}</td>
-        <td >{machine['Gross-Profit']}</td>
+        <td className="data-entry">{machine['Model']}</td>
+        <td className="data-entry">{machine['Serial-Number']}</td>
+        <td className="data-entry">{machine['TW-Invoice-Number']}</td>
+        <td className="data-entry">{machine['TW-Invoice-Date']}</td>
+        <td className="data-entry">{machine['TW-Invoice-Total']}</td>
+        <td className="data-entry">{machine['CUSA-Invoice-Number']}</td>
+        <td className="data-entry">{machine['CUSA-Invoice-Date']}</td>
+        <td className="data-entry">{machine['CUSA-Invoice-Total']}</td>
+        <td className="data-entry">{machine['Dealer']}</td>
+        <td className="data-entry">{machine['End-User']}</td>
+        <td className="data-entry">{machine['Date-Sold']}</td>
+        <td className="data-entry">{machine['Date-Paid']}</td>
+        <td className="data-entry">{machine['Duty/Tarrif']}</td>
+        <td className="data-entry">{machine['Port-Handling']}</td>
+        <td className="data-entry">{machine['Devaning']}</td>
+        <td className="data-entry">{machine['Other-Handling']}</td>
+        <td className="data-entry">{machine['Total-Landed']}</td>
+        <td className="data-entry">{machine['Gross-Profit']}</td>
       </tr>
     </tbody>
 
