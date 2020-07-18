@@ -42,13 +42,13 @@ button {
 
 .title-box {
   font-size: 14px;
-  word-spacing: 100vw;
+  /* word-spacing: 100vw; */
 }
 
 .title {
   max-width: max-content;
+  word-spacing: 100vw;
   text-align: center;
-  white-space: nowrap;
 }
 
 .field-container {
