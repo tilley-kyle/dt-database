@@ -1,5 +1,8 @@
 const currencyFormatter = (currency) => {
-  return parseInt(currency).toFixed(2);
+  if (!parseInt(currency) && !parseFloat(currency)) {
+    return false;
+  }
+  return parseFloat(parseInt(currency).toFixed(2));
 };
 
 export default currencyFormatter;

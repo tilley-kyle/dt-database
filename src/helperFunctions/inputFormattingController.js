@@ -20,7 +20,11 @@ const inputFormattingController = (inputObj) => {
       }
     }
   }
-  if (failedFields.length > 0) return failedFields;
+  if (failedFields.length > 0) {
+    const failedFieldsString = failedFields.map((field) => `${field} `);
+    alert(`${failedFieldsString} are not correct.`);
+    return null;
+  };
   return inputObj;
 };
 
