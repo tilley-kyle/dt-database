@@ -8,6 +8,7 @@ import Body from './components/Body';
 
 import totalLandedCalc from './helperFunctions/totalLandedCalc';
 import grossProfitCalc from './helperFunctions/grossProfitCalc';
+import inputFormattingController from './helperFunctions/inputFormattingController';
 
 class App extends React.Component {
   constructor(props) {
@@ -62,11 +63,15 @@ class App extends React.Component {
   async onSubmitData(e) {
     e.preventDefault();
     const { totalResults, newInput } = this.state;
-    alert('The data was successfully added');
     newInput['Total-Landed'] = totalLandedCalc(newInput);
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
-    await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
-    this.setState({ newInput: {} })
+    if (inputFormattingController(newInput)) {
+      alert('The data was successfully added');
+      await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
+      this.setState({ newInput: {} });
+    } else {
+      return null;
+    }
   }
 
   render() {
