@@ -1,11 +1,8 @@
 const dateFormatter = (inputDate) => {
-  console.log(inputDate)
+  const date = new Date();
+  const year = date.getFullYear();
   inputDate = inputDate.split('-');
-  console.log(inputDate)
-  if (inputDate.length !== 3) {
-    console.log(inputDate)
-    return false;
-  }
+  if (parseInt(inputDate[0]) < 2000 || parseInt(inputDate[0]) > year + 1) return false
   return `${inputDate[1]}/${inputDate[2]}/${inputDate[0]}`;
 };
 

@@ -18,10 +18,13 @@ const inputFormattingController = (inputObj) => {
       return null;
     }
     inputObj[field] = dateFormatter(inputObj[field]);
+    if (!inputObj[field]) {
+      failedFields.push(field);
+    }
   });
   if (failedFields.length > 0) {
     const failedFieldsString = failedFields.map((field) => `${field} `);
-    alert(`${failedFieldsString} are not correct.`);
+    alert(`${failedFieldsString} is/are not correct.`);
     return null;
   };
   return inputObj;
