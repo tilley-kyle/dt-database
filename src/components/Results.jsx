@@ -27,7 +27,6 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
             <th className="title">CUSA Invoice Number</th>
             <th className="title">CUSA Invoice Date</th>
             <th className="title">CUSA Invoice Total</th>
-            <th className="title">Date Sold</th>
             <th className="title">Date Paid</th>
             <th className="title">Gross Profit</th>
           </tr>

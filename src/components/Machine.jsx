@@ -21,7 +21,6 @@ const Machine = ({ machine, inc }) => {
         <td className="data-entry">{machine['CUSA-Invoice-Number']}</td>
         <td className="data-entry">{machine['CUSA-Invoice-Date']}</td>
         <td className="data-entry">${machine['CUSA-Invoice-Total']}</td>
-        <td className="data-entry">{machine['Date-Sold']}</td>
         <td className="data-entry">{machine['Date-Paid']}</td>
         <td className="data-entry">${machine['Gross-Profit']}</td>
       </tr>
