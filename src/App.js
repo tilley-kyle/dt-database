@@ -66,6 +66,7 @@ class App extends React.Component {
     newInput['Total-Landed'] = totalLandedCalc(newInput);
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
     await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
+    this.setState({ newInput: {} })
   }
 
   render() {
