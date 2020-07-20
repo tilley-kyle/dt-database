@@ -46,7 +46,7 @@ button {
 }
 
 .title {
-  max-width: max-content;
+  max-width: 120px;
   word-spacing: 100vw;
   text-align: center;
 }

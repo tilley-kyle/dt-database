@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   async onSearchInputClick(e) {
-    await this.setState({ pageToDisplay: e.target.id });
+    await this.setState({ pageToDisplay: e.target.id, currentResults: [] });
   }
 
   async onSearchClick(e) {
