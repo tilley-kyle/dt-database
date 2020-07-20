@@ -79,4 +79,5 @@ button {
 .totals {
   margin: 0px;
   margin-bottom: 4px;
+  white-space: pre;
 }

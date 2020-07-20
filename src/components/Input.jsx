@@ -29,7 +29,7 @@ const Input = ({ onNewMachineInput, newInput, onSubmitData }) => {
       </div>
       <div className="total-submit">
         <p className="totals">Total Landed: ${totalLanded}</p>
-        <p className="totals">Gross Profit: ${grossProfit}</p>
+        <p className="totals">Gross Profit:  ${grossProfit}</p>
         <button type="submit" onClick={(e) => onSubmitData(e)}>Submit Data</button>
       </div>
     </div>
