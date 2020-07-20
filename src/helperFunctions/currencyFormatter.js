@@ -1,5 +1,5 @@
 const currencyFormatter = (currency) => {
-  return true;
+  return parseInt(currency).toFixed(2);
 };
 
 export default currencyFormatter;
