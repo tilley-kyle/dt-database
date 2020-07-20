@@ -69,9 +69,15 @@ button {
 .total-submit {
   position: relative;
   display: inline-block;
-  bottom: 370px;
+  width: 200px;
+  bottom: 440px;
+  border: 1px solid black;
+  padding: 5px;
+
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
 }
 
 .totals {
   margin: 0px;
+  margin-bottom: 4px;
 }

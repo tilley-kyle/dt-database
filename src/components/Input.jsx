@@ -28,8 +28,8 @@ const Input = ({ onNewMachineInput, newInput, onSubmitData }) => {
         <input className="input-field" type="input" placeholder="Other Handling" id="Other-Handling" onChange={(e) => onNewMachineInput(e)} />
       </div>
       <div className="total-submit">
-        <p className="totals">Total Landed is ${totalLanded}</p>
-        <p className="totals">Gross Profit is ${grossProfit}</p>
+        <p className="totals">Total Landed: ${totalLanded}</p>
+        <p className="totals">Gross Profit: ${grossProfit}</p>
         <button type="submit" onClick={(e) => onSubmitData(e)}>Submit Data</button>
       </div>
     </div>
