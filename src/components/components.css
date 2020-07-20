@@ -70,10 +70,9 @@ button {
   position: relative;
   display: inline-block;
   width: 200px;
-  bottom: 440px;
+  bottom: 432px;
   border: 1px solid black;
   padding: 5px;
-
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
 }
 
