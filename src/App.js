@@ -77,7 +77,6 @@ class App extends React.Component {
           <div className="contact-container">
             <p className="call-today">Call Today: </p>
             <p className="phone-number">(760) 706-7425</p>
-            {/* <a className="dealer" href="https://www.campro-usa.com/">Dealer Center</a> */}
           </div>
           <div className="banner">
             <div className="search-input">

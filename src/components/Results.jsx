@@ -5,6 +5,13 @@ import SearchBar from './SearchBar';
 import Machine from './Machine';
 
 const Results = ({ currentResults, onSearchClick, onTextInput }) => {
+  if (!currentResults.length) {
+    return (
+      <div className="results-container">
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} />
+      </div>
+    )
+  }
   return (
     <div className="results-container">
       <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} />
