@@ -20,7 +20,6 @@ const Input = ({ onNewMachineInput, newInput, onSubmitData }) => {
         <input className="input-field" type="input" placeholder="CUSA Invoice Total" id="CUSA-Invoice-Total" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Dealer" id="Dealer" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="End User" id="End-User" onChange={(e) => onNewMachineInput(e)} />
-        <input className="input-field" type="date" id="Date-Sold" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="date" id="Date-Paid" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Duty/Tarrif" id="Duty/Tarrif" onChange={(e) => onNewMachineInput(e)} />
         <input className="input-field" type="input" placeholder="Port Handling" id="Port-Handling" onChange={(e) => onNewMachineInput(e)} />
