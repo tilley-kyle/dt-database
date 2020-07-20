@@ -67,7 +67,7 @@ class App extends React.Component {
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
     if (inputFormattingController(newInput)) {
       alert('The data was successfully added');
-      await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'home' });
+      await this.setState({ totalResults: [...totalResults, newInput ], pageToDisplay: 'search' });
       this.setState({ newInput: {} });
     } else {
       return null;

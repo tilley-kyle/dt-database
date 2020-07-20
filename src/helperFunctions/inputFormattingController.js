@@ -1,15 +1,7 @@
-const currencyFormatter = '.currencyFormatter';
-const dateFormatter = '.dateFormatter';
+import currencyFormatter from './currencyFormatter';
+import dateFormatter from './dateFormatter';
 
 const inputFormattingController = (inputObj) => {
-  //obj that has each field
-  //obj that keeps track of each field that is wrong
-  //iterate throught object
-    //check that items formatting
-    //if supposed to be a dollar amount, run it through number converter
-    //if supposed to be date, foromat it to mm/dd/yyyy
-  //if obj that keeps track of wrong fields is empty, return fomratted inputObj
-  //else, return field names that are wrong
   const currencyFields = ['TW-Invoice-Total', 'Duty/Tarrif', 'Port-Handling', 'Devaning', 'Other-Handling', 'Total-Landed', 'CUSA-Invoice-Total', 'Gross-Profit'];
   const dateFields = ['TW-Invoice-Date', 'CUSA-Invoice-Date', 'Date-Paid'];
   const failedFields = [];
