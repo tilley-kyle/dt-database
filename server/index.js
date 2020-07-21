@@ -12,7 +12,7 @@ app.use(express.static('build'));
 app.use(bp.json());
 
 app.post('/input', (req, res) => {
-  console.log(req.body);
+  formatter(req.body);
   res.send().status(200);
 });
 

@@ -4,4 +4,4 @@ const dateFormatter = (inputDate) => {
   if (parseInt(inputDate.split('-')[0]) < 2000 || parseInt(inputDate.split('-')[0]) > year + 1) return false
 };
 
-export default  dateFormatter;
+module.exports =  dateFormatter;
