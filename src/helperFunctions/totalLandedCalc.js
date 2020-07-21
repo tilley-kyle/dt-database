@@ -1,5 +1,5 @@
 const totalLandedCalc = (machineObj) => {
-  const totalLandedItems = ['TW-Invoice-Total', 'Duty/Tarrif', 'Port-Handling', 'Devaning', 'Other-Handling'];
+  const totalLandedItems = ['TW_Invoice_Total', 'Duty_Tarrif', 'Port_Handling', 'Devaning', 'Other_Handling'];
   let totalLanded = 0;
   for (const item of totalLandedItems) {
     if (machineObj[item]) {

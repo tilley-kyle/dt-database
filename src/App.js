@@ -8,7 +8,7 @@ import Body from './components/Body';
 
 import totalLandedCalc from './helperFunctions/totalLandedCalc';
 import grossProfitCalc from './helperFunctions/grossProfitCalc';
-import inputChecker from './helperFunctions/inputChecker';
+import inputFieldCheck from './helperFunctions/inputFieldCheck';
 
 class App extends React.Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class App extends React.Component {
     const { totalResults, newInput } = this.state;
     newInput['Total-Landed'] = totalLandedCalc(newInput);
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
-    if (inputChecker(newInput)) {
+    if (inputFieldCheck(newInput)) {
       fetch('/input', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
@@ -73,14 +73,14 @@ class App extends React.Component {
       })
       .then((res) => {
         alert('The data was successfully added');
-        this.setState({ totalResults: [...totalResults, formattedInput], pageToDisplay: 'search', newInput: {} });
+        this.setState({ totalResults: [...totalResults, newInput], pageToDisplay: 'search', newInput: {} });
       })
       .catch((err) => {
         alert('Server side error loading data');
         console.log(err);
       });
     } else {
-      return null;
+      console.log('here');
     }
   }
 

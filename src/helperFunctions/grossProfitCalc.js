@@ -1,6 +1,6 @@
 const grossProfitCalc = (machineObj, totalLanded) => {
-  if (machineObj['CUSA-Invoice-Total'] && totalLanded) {
-    return parseInt(machineObj['CUSA-Invoice-Total']) - totalLanded;
+  if (machineObj['CUSA_Invoice_Total'] && totalLanded) {
+    return parseInt(machineObj['CUSA_Invoice_Total']) - totalLanded;
   }
   return null;
 };
