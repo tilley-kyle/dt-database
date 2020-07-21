@@ -24,7 +24,7 @@ const inputFieldCheck = (inputObject) => {
       missingFields.push(field);
     }
   });
-  if (missingFields.length === 0) {
+  if (missingFields.length) {
     return missingFields;
   }
   return true;
