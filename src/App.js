@@ -67,14 +67,19 @@ class App extends React.Component {
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
     const formattedInput = inputFormattingController(newInput);
     if (formattedInput) {
-      alert('The data was successfully added');
-      await this.setState({ totalResults: [...totalResults, formattedInput], pageToDisplay: 'search' });
-      this.setState({ newInput: {} });
       fetch('/input', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
         body: JSON.stringify(formattedInput),
       })
+      .then((res) => {
+        alert('The data was successfully added');
+        this.setState({ totalResults: [...totalResults, formattedInput], pageToDisplay: 'search', newInput: {} });
+      })
+      .catch((err) => {
+        alert('Server side error loading data');
+        console.log(err);
+      });
     } else {
       return null;
     }
