@@ -8,7 +8,7 @@ import Body from './components/Body';
 
 import totalLandedCalc from './helperFunctions/totalLandedCalc';
 import grossProfitCalc from './helperFunctions/grossProfitCalc';
-import inputFormattingController from './helperFunctions/inputFormattingController';
+import inputChecker from './helperFunctions/inputChecker';
 
 class App extends React.Component {
   constructor(props) {
@@ -65,12 +65,11 @@ class App extends React.Component {
     const { totalResults, newInput } = this.state;
     newInput['Total-Landed'] = totalLandedCalc(newInput);
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
-    const formattedInput = inputFormattingController(newInput);
-    if (formattedInput) {
+    if (inputChecker(newInput)) {
       fetch('/input', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
-        body: JSON.stringify(formattedInput),
+        body: JSON.stringify(newInput),
       })
       .then((res) => {
         alert('The data was successfully added');
