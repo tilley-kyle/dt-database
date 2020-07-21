@@ -63,8 +63,8 @@ class App extends React.Component {
   async onSubmitData(e) {
     e.preventDefault();
     const { totalResults, newInput } = this.state;
-    newInput['Total-Landed'] = totalLandedCalc(newInput);
-    newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
+    newInput['Total_Landed'] = totalLandedCalc(newInput);
+    newInput['Gross_Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
     if (inputFieldCheck(newInput) === true) {
       fetch('/input', {
         method: 'POST',
