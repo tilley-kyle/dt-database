@@ -65,9 +65,10 @@ class App extends React.Component {
     const { totalResults, newInput } = this.state;
     newInput['Total_Landed'] = totalLandedCalc(newInput).toString();
     newInput['Gross_Profit'] = grossProfitCalc(newInput, newInput['Total_Landed']).toString();
-    console.log(newInput)
-    if (inputFieldCheck(newInput) === true) {
-      fetch('/input', {
+    console.log(newInput);
+    const statusOfFields = inputFieldCheck(newInput);
+    if (statusOfFields === true) {
+      fetch('http://localhost:3001/input', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
         body: JSON.stringify(newInput),
@@ -81,7 +82,7 @@ class App extends React.Component {
         console.log(err);
       });
     } else {
-      alert('something is wrong')
+      alert(`${statusOfFields} is/are wrong`);
     }
   }
 
