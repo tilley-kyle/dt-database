@@ -65,9 +65,7 @@ class App extends React.Component {
     const { totalResults, newInput } = this.state;
     newInput['Total_Landed'] = totalLandedCalc(newInput).toString();
     newInput['Gross_Profit'] = grossProfitCalc(newInput, newInput['Total_Landed']).toString();
-    console.log(newInput);
     const statusOfFields = inputFieldCheck(newInput);
-    console.log(statusOfFields);
     if (statusOfFields === true) {
       fetch('http://localhost:3001/input', {
         method: 'POST',
