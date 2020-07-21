@@ -65,7 +65,7 @@ class App extends React.Component {
     const { totalResults, newInput } = this.state;
     newInput['Total-Landed'] = totalLandedCalc(newInput);
     newInput['Gross-Profit'] = grossProfitCalc(newInput, newInput['Total-Landed']);
-    if (inputFieldCheck(newInput)) {
+    if (inputFieldCheck(newInput) === true) {
       fetch('/input', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
@@ -80,7 +80,7 @@ class App extends React.Component {
         console.log(err);
       });
     } else {
-      console.log('here');
+      alert('something is wrong')
     }
   }
 

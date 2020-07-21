@@ -27,7 +27,7 @@ const inputFieldCheck = (inputObject) => {
   if (missingFields.length === 0) {
     return missingFields;
   }
-  return false;
+  return true;
 };
 
 export default inputFieldCheck;
