@@ -6,6 +6,7 @@ const Machine = require('../../db/machineSchema');
 const formattingController = async (req, res) => {
   const currencyFields = ['TW_Invoice_Total', 'Duty_Tarrif', 'Port_Handling', 'Devaning', 'Other_Handling', 'Total_Landed', 'CUSA_Invoice_Total', 'Gross_Profit'];
   const dateFields = ['TW_Invoice_Date', 'CUSA_Invoice_Date', 'Date_Paid'];
+  console.log(req.body)
   currencyFields.forEach((field) => {
     req.body[field] = currencyFormatter(req.body[field]);
   });
