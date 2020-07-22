@@ -17,4 +17,7 @@ describe('currencyFormatter Tests', () => {
   it('Should handle numbers that are already integers', () => {
     expect(currencyFormatter('100.00')).to.equal('100.00');
   });
+  it('Should return false when given no input', () => {
+    expect(currencyFormatter('')).to.be.false;
+  });
 });
