@@ -17,7 +17,8 @@ const formattingController = async (req, res) => {
   });
   console.log(failedFields)
   if (failedFields.length) {
-    res.status(400).send(failedFields);
+    const failObj = {failedFields: failedFields};
+    res.status(400).end('JSON.stringify(failObj)');
     return null;
   }
   const machine = new Machine({

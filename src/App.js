@@ -69,17 +69,20 @@ class App extends React.Component {
     if (statusOfFields === true) {
       fetch('http://localhost:3001/input', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json',},
+        headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(newInput),
       })
-      .then((res) => {
-        alert('The data was successfully added');
-        this.setState({ totalResults: [...totalResults, newInput], pageToDisplay: 'search', newInput: {} });
-      })
-      .catch((err) => {
-        alert('Server side error loading data');
-        console.log(err);
-      });
+        .then((res) => {
+          if (res.status === 201) {
+            this.setState({ totalResults: [...totalResults, newInput], pageToDisplay: 'search', newInput: {} });
+          } else {
+            alert ('At least 1 input field couldn\'t be properly stored');
+          }
+        })
+        .catch((err) => {
+          alert('Server side error loading data');
+          console.log(err);
+        });
     } else {
       alert(`${statusOfFields} is/are wrong`);
     }
@@ -101,7 +104,7 @@ class App extends React.Component {
             </div>
           </div>
           <a href="https://www.campro-usa.com/" target="_blank">
-            <img className="banner-img" src={camproUSALogo} alt="campro usa logo"/>
+            <img className="banner-img" src={camproUSALogo} alt="campro usa logo" />
           </a>
         </div>
         <Body
