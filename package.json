@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "nodemon server/index.js",
-    "test-currency": "mocha src/helperFunctions/currencyFormatter.test.js"
+    "test-currency": "mocha server/serverTests/currencyFormatter.test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
