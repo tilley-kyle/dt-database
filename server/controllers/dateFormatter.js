@@ -14,4 +14,4 @@ const dateFormatter = (inputDate) => {
   return `${inputDate[1]}/${inputDate[2]}/${inputDate[0]}`;
 };
 
-module.exports =  dateFormatter;
+module.exports = dateFormatter;
