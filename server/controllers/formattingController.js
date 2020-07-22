@@ -31,8 +31,13 @@ const formattingController = async (req, res) => {
     Total_Landed: req.body['Total_Landed'],
     Gross_Profit: req.body['Gross_Profit'],
   });
-  machine.save();
-  res.status(201).send();
+  machine.save()
+  .then(() => {
+    res.status(201).send();
+  })
+  .catch((err) => {
+    res.status(400).send(err);
+  });
 };
 
 module.exports = formattingController;
