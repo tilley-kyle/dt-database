@@ -6,12 +6,20 @@ const Machine = require('../../db/machineSchema');
 const formattingController = async (req, res) => {
   const currencyFields = ['TW_Invoice_Total', 'Duty_Tarrif', 'Port_Handling', 'Devaning', 'Other_Handling', 'Total_Landed', 'CUSA_Invoice_Total', 'Gross_Profit'];
   const dateFields = ['TW_Invoice_Date', 'CUSA_Invoice_Date', 'Date_Paid'];
+  const failedFields = [];
   currencyFields.forEach((field) => {
     req.body[field] = currencyFormatter(req.body[field]);
+    if (!req.body[field]) failedFields.push(field);
   });
   dateFields.forEach((field) => {
     req.body[field] = dateFormatter(req.body[field]);
+    if (!req.body[field]) failedFields.push(field);
   });
+  console.log(failedFields)
+  if (failedFields.length) {
+    res.status(400).send(failedFields);
+    return null;
+  }
   const machine = new Machine({
     Model: req.body['Model'],
     Serial_Number: req.body['Serial_Number'],
