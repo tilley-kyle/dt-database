@@ -100,8 +100,8 @@ class App extends React.Component {
               <div className="input item" id="input" onClick={(e) => this.onSearchInputClick(e)}>Input</div>
             </div>
           </div>
-          <a href="https://www.campro-usa.com/">
-            <img className="banner-img" src={camproUSALogo} alt="campro usa logo" />
+          <a href="https://www.campro-usa.com/" target="_blank">
+            <img className="banner-img" src={camproUSALogo} alt="campro usa logo"/>
           </a>
         </div>
         <Body
