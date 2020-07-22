@@ -3,7 +3,7 @@ const totalLandedCalc = (machineObj) => {
   let totalLanded = 0;
   for (const item of totalLandedItems) {
     if (machineObj[item]) {
-      totalLanded += parseInt(machineObj[item]);
+      totalLanded += parseFloat(machineObj[item]);
     }
   }
   return totalLanded;
