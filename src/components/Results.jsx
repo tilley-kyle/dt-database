@@ -20,12 +20,12 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick }) =>
       <div className="results-container">
         <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} />
         <div className="machine-container">
-          <table className="table-container">
+          <table className="table-container-averages">
             <thead>
               <tr className="title-box">
-                <th className="title">Total Sold</th>
-                <th className="title">Total Profit</th>
-                <th className="title">Average Profit</th>
+                <th className="title-avgs">Total Sold</th>
+                <th className="title-avgs">Total Profit</th>
+                <th className="title-avgs">Average Profit</th>
               </tr>
             </thead>
             <tbody>

@@ -41,13 +41,25 @@ button {
 
 .title-box {
   font-size: 14px;
-  /* word-spacing: 100vw; */
 }
 
 .title {
   max-width: 120px;
   word-spacing: 100vw;
   text-align: center;
+}
+
+.table-container-averages {
+  border: 0;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.title-avgs {
+  max-width: 120px;
+  text-align: center;
+  text-decoration: underline;
+  padding: 2px 5px;
 }
 
 .field-container {
