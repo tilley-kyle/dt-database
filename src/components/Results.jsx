@@ -4,7 +4,7 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = ({ currentResults, onSearchClick, onTextInput }) => {
+const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick }) => {
   if (!currentResults.length) {
     return (
       <div className="results-container">
@@ -19,6 +19,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
       <table className="table-container">
         <thead>
           <tr className="title-box">
+            <th className=""></th>
             <th className="title">Model</th>
             <th className="title">Serial Number</th>
             <th className="title">TW Invoice Number</th>
@@ -38,7 +39,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput }) => {
             <th className="title">Gross Profit</th>
           </tr>
         </thead>
-        {currentResults.map((machine, i) => <Machine key={i} inc={i} machine={machine} />
+        {currentResults.map((machine, i) => <Machine key={i} inc={i} machine={machine} onEditClick={onEditClick} />
         )}
       </table>
     </div>

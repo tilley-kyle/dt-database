@@ -1,11 +1,12 @@
 import React from 'react';
 import './components.css';
 
-const Machine = ({ machine, inc }) => {
+const Machine = ({ machine, inc, onEditClick }) => {
   const tdClassName = inc % 2 === 0 || inc === 0 ? 'even' : 'odd';
   return (
     <tbody>
       <tr className={tdClassName}>
+        <td className="edit-button"><button className="reset-style"  id={inc} onClick={(e) => onEditClick(e)}>&#9998;</button></td>
         <td className="data-entry">{machine['Model']}</td>
         <td className="data-entry">{machine['Serial_Number']}</td>
         <td className="data-entry">{machine['TW_Invoice_Number']}</td>
