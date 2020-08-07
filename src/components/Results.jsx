@@ -13,7 +13,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, tota
     )
   } else {
     let totalProfit = 0;
-    totalResults.forEach((machine) => {
+    currentResults.forEach((machine) => {
       totalProfit += parseInt(machine['Gross_Profit']);
     });
     return (
