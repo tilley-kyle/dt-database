@@ -4,11 +4,11 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, totalResults }) => {
+const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, totalResults, onMachineClick }) => {
   if (!currentResults.length) {
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} onMachineClick={onMachineClick} />
       </div>
     )
   } else {

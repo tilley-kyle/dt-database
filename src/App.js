@@ -25,6 +25,7 @@ class App extends React.Component {
     this.onNewMachineInput = this.onNewMachineInput.bind(this);
     this.onSubmitData = this.onSubmitData.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
+    this.onMachineClick = this.onMachineClick.bind(this);
   }
 
   componentDidMount() {
@@ -95,6 +96,11 @@ class App extends React.Component {
     console.log(currentResults[e.target.id])
   }
 
+  onMachineClick (e) {
+    e.preventDefault();
+    console.log(e.target.value);
+  }
+
   render() {
     const { pageToDisplay, searchCriteria, currentResults, totalResults, newInput } = this.state;
     return (
@@ -124,6 +130,7 @@ class App extends React.Component {
           onNewMachineInput={this.onNewMachineInput}
           newInput={newInput}
           onSubmitData={this.onSubmitData}
+          onMachineClick={this.onMachineClick}
           onEditClick={this.onEditClick}
         />
       </div>

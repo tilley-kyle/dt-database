@@ -1,14 +1,13 @@
 import React from 'react';
 import './components.css';
 
-const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults }) => (
+const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults, onMachineClick }) => (
   <div className="search-bar">
-    <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" />
+    <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" id="searchInputModel" onChange={(e) => {onTextInput(e)}}/>
     <datalist id="model-list">
-      {totalResults.map((machine) =>
-        <option value={machine.Model} />
+      {totalResults.map((machine, i) =>
+        <option value={machine.Model} key={i} onClick={(e) => onMachineClick(e)} />
       )}
-      <option value="CPV-1050B"/>
     </datalist>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputModel').value=''}}>Search Model</button>
     <input type="input" id="searchInputSerial" placeholder="Input Serial ID" onChange={(e) => {onTextInput(e)}}></input>
