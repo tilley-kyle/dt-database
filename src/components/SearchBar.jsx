@@ -6,7 +6,7 @@ const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults, o
     <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" id="searchInputModel" onChange={(e) => {onTextInput(e)}}/>
     <datalist id="model-list">
       {totalResults.map((machine, i) =>
-        <option value={machine.Model} key={i} onClick={(e) => onMachineClick(e)} />
+        <option value={machine.Model} key={i} />
       )}
     </datalist>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputModel').value=''}}>Search Model</button>

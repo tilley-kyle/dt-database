@@ -18,7 +18,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, tota
     });
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} totalResults={totalResults} />
         <div className="machine-container">
           <table className="table-container-averages">
             <thead>

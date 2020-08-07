@@ -37,6 +37,7 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
+    console.log('hi')
     const { totalResults, searchInput } = this.state;
     const results = [];
     if (e.target.value === 'all') {
