@@ -3,7 +3,10 @@ import './components.css';
 
 const SearchBar = ({ onSearchClick, onTextInput }) => (
   <div className="search-bar">
-    <input type="input" id="searchInputModel" placeholder="Input Model ID" onChange={(e) => {onTextInput(e)}}></input>
+    <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" />
+    <datalist id="model-list">
+      <option value="CPV-1050B"/>
+    </datalist>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputModel').value=''}}>Search Model</button>
     <input type="input" id="searchInputSerial" placeholder="Input Serial ID" onChange={(e) => {onTextInput(e)}}></input>
     <button type="submit" value="Serial_Number" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputSerial').value=''}}>Search Serial</button>

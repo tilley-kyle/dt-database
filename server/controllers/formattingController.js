@@ -15,7 +15,6 @@ const formattingController = async (req, res) => {
     req.body[field] = dateFormatter(req.body[field]);
     if (!req.body[field]) failedFields.push(field);
   });
-  console.log(failedFields)
   if (failedFields.length) {
     const failObj = {failedFields: failedFields};
     res.status(400).end('JSON.stringify(failObj)');
