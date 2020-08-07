@@ -4,21 +4,21 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick }) => {
+const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, totalResults }) => {
   if (!currentResults.length) {
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} />
       </div>
     )
   } else {
     let totalProfit = 0;
-    currentResults.forEach((machine) => {
+    totalResults.forEach((machine) => {
       totalProfit += parseInt(machine['Gross_Profit']);
     });
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} />
         <div className="machine-container">
           <table className="table-container-averages">
             <thead>

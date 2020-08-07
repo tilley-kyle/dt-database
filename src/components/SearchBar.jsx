@@ -1,10 +1,13 @@
 import React from 'react';
 import './components.css';
 
-const SearchBar = ({ onSearchClick, onTextInput }) => (
+const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults }) => (
   <div className="search-bar">
     <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" />
     <datalist id="model-list">
+      {totalResults.map((machine) =>
+        <option value={machine.Model} />
+      )}
       <option value="CPV-1050B"/>
     </datalist>
     <button type="submit" value="Model" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputModel').value=''}}>Search Model</button>
