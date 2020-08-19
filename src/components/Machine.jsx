@@ -11,19 +11,19 @@ const Machine = ({ machine, inc, onEditClick }) => {
         <td className="data-entry">{machine['Serial_Number']}</td>
         <td className="data-entry">{machine['TW_Invoice_Number']}</td>
         <td className="data-entry">{machine['TW_Invoice_Date']}</td>
-        <td className="data-entry">${machine['TW_Invoice_Total']}</td>
-        <td className="data-entry">${machine['Duty_Tarrif']}</td>
-        <td className="data-entry">${machine['Port_Handling']}</td>
-        <td className="data-entry">${machine['Devaning']}</td>
-        <td className="data-entry">${machine['Other_Handling']}</td>
-        <td className="data-entry">${machine['Total_Landed']}</td>
+        <td className="data-entry">{parseInt(machine['TW_Invoice_Total']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
+        <td className="data-entry">{parseInt(machine['Duty_Tarrif']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
+        <td className="data-entry">{parseInt(machine['Port_Handling']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
+        <td className="data-entry">{parseInt(machine['Devaning']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
+        <td className="data-entry">{parseInt(machine['Other_Handling']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
+        <td className="data-entry">{parseInt(machine['Total_Landed']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
         <td className="data-entry">{machine['Dealer']}</td>
         <td className="data-entry">{machine['End_User']}</td>
         <td className="data-entry">{machine['CUSA_Invoice_Number']}</td>
         <td className="data-entry">{machine['CUSA_Invoice_Date']}</td>
-        <td className="data-entry">${machine['CUSA_Invoice_Total']}</td>
+        <td className="data-entry">{parseInt(machine['CUSA_Invoice_Total']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
         <td className="data-entry">{machine['Date_Paid']}</td>
-        <td className="data-entry">${machine['Gross_Profit']}</td>
+        <td className="data-entry">{parseInt(machine['Gross_Profit']).toLocaleString("en-US", {style:"currency", currency:"USD"})}</td>
       </tr>
     </tbody>
 
