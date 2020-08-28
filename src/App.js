@@ -19,6 +19,7 @@ class App extends React.Component {
       pageToDisplay: 'search',
       searchInput: '',
       newInput: {},
+      modelIDs: [],
     }
     this.onSearchClick = this.onSearchClick.bind(this);
     this.onTextInput = this.onTextInput.bind(this);
@@ -30,12 +31,12 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ totalResults: dummyData });
-    fetch('/start')
+    fetch('http://localhost:3001/start')
     .then((res) => {
       return res.json();
     })
-    .then((modelIDs) =>{
-      console.log(modelIDs)
+    .then( async (modelIDs) =>{
+      await this.setState({ modelIDs: modelIDs });
     })
   }
 
@@ -110,7 +111,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { pageToDisplay, searchCriteria, currentResults, totalResults, newInput } = this.state;
+    const { pageToDisplay, searchCriteria, currentResults, totalResults, newInput, modelIDs } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -140,6 +141,7 @@ class App extends React.Component {
           onSubmitData={this.onSubmitData}
           onMachineClick={this.onMachineClick}
           onEditClick={this.onEditClick}
+          modelIDs={modelIDs}
         />
       </div>
     );

@@ -4,11 +4,11 @@ import './components.css';
 import SearchBar from './SearchBar';
 import Machine from './Machine';
 
-const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, totalResults, onMachineClick }) => {
+const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, totalResults, onMachineClick, modelIDs }) => {
   if (!currentResults.length) {
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} onMachineClick={onMachineClick} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} onMachineClick={onMachineClick} modelIDs={modelIDs}/>
       </div>
     )
   } else {
@@ -18,7 +18,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, tota
     });
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} totalResults={totalResults} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} totalResults={totalResults} modelIDs={modelIDs} />
         <div className="machine-container">
           <table className="table-container-averages">
             <thead>
