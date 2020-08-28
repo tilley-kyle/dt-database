@@ -27,8 +27,8 @@ const Input = ({ onNewMachineInput, newInput, onSubmitData }) => {
         <input className="input-field" type="input" placeholder="Other Handling" id="Other_Handling" onChange={(e) => onNewMachineInput(e)} />
       </div>
       <div className="total-submit">
-        <p className="totals">Total Landed: ${parseFloat(totalLanded).toFixed(2)}</p>
-        <p className="totals">Gross Profit:  ${parseFloat(grossProfit).toFixed(2)}</p>
+        <p className="totals">Total Landed: {totalLanded.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
+        <p className="totals">Gross Profit:  {grossProfit.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         <button type="submit" onClick={(e) => onSubmitData(e)}>Submit Data</button>
       </div>
     </div>
