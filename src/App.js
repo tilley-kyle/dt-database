@@ -30,6 +30,13 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ totalResults: dummyData });
+    fetch('/start')
+    .then((res) => {
+      return res.json();
+    })
+    .then((modelIDs) =>{
+      console.log(modelIDs)
+    })
   }
 
   async onSearchInputClick(e) {
