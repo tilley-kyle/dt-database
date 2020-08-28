@@ -3,14 +3,11 @@ import './components.css';
 
 const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults, onMachineClick, modelIDs }) => {
   if (!modelIDs || modelIDs.length === 0) {
-    console.log(modelIDs)
     return (
       <div className="search-bar">
         <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" id="searchInputModel" onChange={(e) => {onTextInput(e)}}/>
         <datalist id="model-list">
-
-            <option value='problem' />
-
+          <option value='problem' />
         </datalist>
         <button type="submit" value="Model" onClick={(e) => {onSearchClick(e); document.getElementById('searchInputModel').value=''}}>Search Model</button>
         <input type="input" id="searchInputSerial" placeholder="Input Serial ID" onChange={(e) => {onTextInput(e)}}></input>
@@ -23,7 +20,6 @@ const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults, o
       </div>
     )
   }
-  console.log('hey')
   return (
   <div className="search-bar">
     <input type="input" list="model-list" name="model" id="model" placeholder="Input Model ID" id="searchInputModel" onChange={(e) => {onTextInput(e)}}/>

@@ -45,19 +45,24 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
-    console.log('hi')
     const { totalResults, searchInput } = this.state;
     const results = [];
-    if (e.target.value === 'all') {
-      await this.setState({ currentResults: this.state.totalResults });
-      return;
-    }
-    totalResults.forEach((item) => {
-      if (item[e.target.value] == searchInput) {
-        results.push(item);
-      }
-    });
-    this.setState({ currentResults: results });
+    console.log('criteria: ', e.target.value)
+    console.log('info: ', searchInput)
+    const fetchBody = {criteria: e.target.value, input: searchInput};
+    fetch('http://localhost:3001/search', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fetchBody),
+    })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      this.setState({ currentResults: data });
+    })
   }
 
   async onTextInput(e) {
