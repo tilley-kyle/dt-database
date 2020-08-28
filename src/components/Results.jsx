@@ -8,7 +8,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, tota
   if (!currentResults.length) {
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} totalResults={totalResults} onMachineClick={onMachineClick} modelIDs={modelIDs}/>
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} onMachineClick={onMachineClick} modelIDs={modelIDs}/>
       </div>
     )
   } else {
@@ -18,7 +18,7 @@ const Results = ({ currentResults, onSearchClick, onTextInput, onEditClick, tota
     });
     return (
       <div className="results-container">
-        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} totalResults={totalResults} modelIDs={modelIDs} />
+        <SearchBar onSearchClick={onSearchClick} onTextInput={onTextInput} currentResults={currentResults} modelIDs={modelIDs} />
         <div className="machine-container">
           <table className="table-container-averages">
             <thead>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './components.css';
 
-const SearchBar = ({ onSearchClick, onTextInput, currentResults, totalResults, onMachineClick, modelIDs }) => {
+const SearchBar = ({ onSearchClick, onTextInput, currentResults, onMachineClick, modelIDs }) => {
   if (!modelIDs || modelIDs.length === 0) {
     return (
       <div className="search-bar">

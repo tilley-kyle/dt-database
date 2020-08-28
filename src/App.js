@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 import camproUSALogo from './images/Campro_USA_Blue_Logo.webp';
-import dummyData from './dummyData';
 
 import Body from './components/Body';
 
@@ -15,7 +14,6 @@ class App extends React.Component {
     super(props)
     this.state = {
       currentResults: [],
-      totalResults: [],
       pageToDisplay: 'search',
       searchInput: '',
       newInput: {},
@@ -30,7 +28,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ totalResults: dummyData });
     fetch('http://localhost:3001/start')
     .then((res) => {
       return res.json();
@@ -45,10 +42,7 @@ class App extends React.Component {
   }
 
   async onSearchClick(e) {
-    const { totalResults, searchInput } = this.state;
-    const results = [];
-    console.log('criteria: ', e.target.value)
-    console.log('info: ', searchInput)
+    const { searchInput } = this.state;
     const fetchBody = {criteria: e.target.value, input: searchInput};
     fetch('http://localhost:3001/search', {
       method: 'PUT',
@@ -78,7 +72,7 @@ class App extends React.Component {
 
   async onSubmitData(e) {
     e.preventDefault();
-    const { totalResults, newInput } = this.state;
+    const { newInput, modelIDs } = this.state;
     newInput['Total_Landed'] = totalLandedCalc(newInput).toString();
     newInput['Gross_Profit'] = grossProfitCalc(newInput, newInput['Total_Landed']).toString();
     const statusOfFields = inputFieldCheck(newInput);
@@ -90,7 +84,7 @@ class App extends React.Component {
       })
         .then((res) => {
           if (res.status === 201) {
-            this.setState({ totalResults: [...totalResults, newInput], pageToDisplay: 'search', newInput: {} });
+            this.setState({ modelIDs: [...modelIDs, newInput.Model], pageToDisplay: 'search', newInput: {} });
           } else {
             alert ('At least 1 input field couldn\'t be properly stored');
           }
@@ -116,7 +110,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { pageToDisplay, searchCriteria, currentResults, totalResults, newInput, modelIDs } = this.state;
+    const { pageToDisplay, searchCriteria, currentResults, newInput, modelIDs } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -138,7 +132,6 @@ class App extends React.Component {
           pageToDisplay={pageToDisplay}
           searchCriteria={searchCriteria}
           currentResults={currentResults}
-          totalResults={totalResults}
           onSearchClick={this.onSearchClick}
           onTextInput={this.onTextInput}
           onNewMachineInput={this.onNewMachineInput}
