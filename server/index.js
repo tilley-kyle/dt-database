@@ -2,6 +2,8 @@ const express = require('express');
 const bp = require('body-parser');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const formattingController = require('./controllers/formattingController');
 const idGetter = require('./controllers/idGetter');
 const dbSearch = require('./controllers/dbSearch');

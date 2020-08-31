@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/start')
+    fetch('/start')
     .then((res) => {
       return res.json();
     })
@@ -47,7 +47,7 @@ class App extends React.Component {
   async onSearchClick(e) {
     const { searchInput } = this.state;
     const fetchBody = {criteria: e.target.value, input: searchInput};
-    fetch('http://localhost:3001/search', {
+    fetch('/search', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ class App extends React.Component {
     newInput['Gross_Profit'] = grossProfitCalc(newInput, newInput['Total_Landed']).toString();
     const statusOfFields = inputFieldCheck(newInput);
     if (statusOfFields === true) {
-      fetch('http://localhost:3001/input', {
+      fetch('/input', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(newInput),
@@ -109,7 +109,7 @@ class App extends React.Component {
 
   async onEditSubmit(e) {
     const {editElement} = this.state;
-    fetch('http://localhost:3001/edit', {
+    fetch('/edit', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', },
       body: JSON.stringify(editElement),
