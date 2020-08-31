@@ -23,7 +23,7 @@
     "react": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "test-currency": "mocha server/serverTests/currencyFormatter.test.js",
     "test-date": "mocha server/serverTests/dateFormatter.test.js",
     "test": "mocha server/serverTests/currencyFormatter.test.js && mocha server/serverTests/dateFormatter.test.js"
