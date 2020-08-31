@@ -18,6 +18,7 @@ class App extends React.Component {
       searchInput: '',
       newInput: {},
       modelIDs: [],
+      editElement: {},
     }
     this.onSearchClick = this.onSearchClick.bind(this);
     this.onTextInput = this.onTextInput.bind(this);
@@ -25,6 +26,8 @@ class App extends React.Component {
     this.onSubmitData = this.onSubmitData.bind(this);
     this.onEditClick = this.onEditClick.bind(this);
     this.onMachineClick = this.onMachineClick.bind(this);
+    this.onMachineEdit = this.onMachineEdit.bind(this);
+    this.onEditSubmit = this.onEditSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -70,6 +73,13 @@ class App extends React.Component {
     await this.setState({ newInput: newInput });
   }
 
+  async onMachineEdit(e) {
+    const { editElement } = this.state;
+    console.log(e.target.id, ':', e.target.value)
+    editElement[e.target.id] = e.target.value;
+
+  }
+
   async onSubmitData(e) {
     e.preventDefault();
     const { newInput, modelIDs } = this.state;
@@ -98,19 +108,30 @@ class App extends React.Component {
     }
   }
 
+  async onEditSubmit(e) {
+    const {editElement} = this.state;
+    fetch('http://localhost:3001/edit', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', },
+      body: JSON.stringify(editElement),
+    })
+  }
+
   async onEditClick (e) {
     const { currentResults } = this.state;
     e.preventDefault(e);
     console.log(currentResults[e.target.id])
+    this.setState({ pageToDisplay: 'edit', editElement: currentResults[e.target.id] });
   }
 
   onMachineClick (e) {
     e.preventDefault();
+    this.setState({ pageToDisplay: 'edit', editElement: e.target.value });
     console.log(e.target.value);
   }
 
   render() {
-    const { pageToDisplay, searchCriteria, currentResults, newInput, modelIDs } = this.state;
+    const { pageToDisplay, searchCriteria, currentResults, newInput, modelIDs, editElement } = this.state;
     return (
       <div className="total-container">
         <div className="banner-container">
@@ -140,6 +161,9 @@ class App extends React.Component {
           onMachineClick={this.onMachineClick}
           onEditClick={this.onEditClick}
           modelIDs={modelIDs}
+          editElement={editElement}
+          onMachineEdit={this.onMachineEdit}
+          onEditSubmit={this.onEditSubmit}
         />
       </div>
     );
