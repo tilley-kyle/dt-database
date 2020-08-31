@@ -75,7 +75,6 @@ class App extends React.Component {
 
   async onMachineEdit(e) {
     const { editElement } = this.state;
-    console.log(e.target.id, ':', e.target.value)
     editElement[e.target.id] = e.target.value;
 
   }
@@ -115,6 +114,14 @@ class App extends React.Component {
       headers: { 'Content-Type': 'application/json', },
       body: JSON.stringify(editElement),
     })
+    .then(() => {
+      alert('Data edited');
+      this.setState({ pageToDisplay: 'search' });
+    })
+    .catch((err) => {
+      console.log(err);
+      alert('Something went wrong');
+    });
   }
 
   async onEditClick (e) {
