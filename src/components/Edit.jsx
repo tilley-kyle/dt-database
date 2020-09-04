@@ -3,7 +3,7 @@ import React from 'react';import './components.css';
 import totalLandedCalc from '../helperFunctions/totalLandedCalc';
 import grossProfitCalc from '../helperFunctions/grossProfitCalc';
 
-const Edit = ({ editElement, onMachineEdit, onEditSubmit }) => {
+const Edit = ({ editElement, onMachineEdit, onEditSubmit, onDeleteSubmit }) => {
   const totalLanded = totalLandedCalc(editElement);
   const grossProfit = grossProfitCalc(editElement, totalLanded) ? grossProfitCalc(editElement, totalLanded) : 0;
 
@@ -30,7 +30,7 @@ const Edit = ({ editElement, onMachineEdit, onEditSubmit }) => {
         <p className="totals">Total Landed: {totalLanded.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         <p className="totals">Gross Profit:  {grossProfit.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         <button type="submit" onClick={(e) => onEditSubmit(e)}>Submit Change</button>
-        <button type="submit" onClick={(e) => onEditSubmit(e)}>Submit Change</button>
+        <button type="submit" onClick={(e) => onDeleteSubmit(e)}>Delete Data</button>
       </div>
     </div>
   );

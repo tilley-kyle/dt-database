@@ -28,6 +28,7 @@ class App extends React.Component {
     this.onMachineClick = this.onMachineClick.bind(this);
     this.onMachineEdit = this.onMachineEdit.bind(this);
     this.onEditSubmit = this.onEditSubmit.bind(this);
+    thist.onDeleteSubmit = this.onDeleteSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -124,6 +125,24 @@ class App extends React.Component {
     });
   }
 
+  onDeleteSubmit (e) {
+    e.preventDefault(e);
+    console.log(hi)
+    fetch('/delete', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', },
+      body: JSON.stringify(editElement),
+    })
+    .then(() => {
+      alert('Data deleted');
+      this.setState({ pageToDisplay: 'search' });
+    })
+    .catch((err) => {
+      console.log(err);
+      alert('Something went wrong');
+    });
+  }
+
   async onEditClick (e) {
     const { currentResults } = this.state;
     e.preventDefault(e);
@@ -132,10 +151,11 @@ class App extends React.Component {
   }
 
   onMachineClick (e) {
-    e.preventDefault();
+    e.preventDefault(e);
     this.setState({ pageToDisplay: 'edit', editElement: e.target.value });
     console.log(e.target.value);
   }
+
 
   render() {
     const { pageToDisplay, searchCriteria, currentResults, newInput, modelIDs, editElement } = this.state;
@@ -171,6 +191,7 @@ class App extends React.Component {
           editElement={editElement}
           onMachineEdit={this.onMachineEdit}
           onEditSubmit={this.onEditSubmit}
+          onDeleteSubmit={this.onDeleteSubmit}
         />
       </div>
     );
