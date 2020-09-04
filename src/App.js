@@ -135,7 +135,7 @@ class App extends React.Component {
     })
     .then(() => {
       alert('Data deleted');
-      this.setState({ pageToDisplay: 'search' });
+      this.setState({ pageToDisplay: 'search', currentResults: [] });
     })
     .catch((err) => {
       console.log(err);
