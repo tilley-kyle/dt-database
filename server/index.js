@@ -24,4 +24,6 @@ app.put('/search', dbSearch);
 
 app.put('/edit', editData);
 
+app.put('/delete', deleteData);
+
 app.listen(process.env.PORT || port, () => console.log(`listening on port ${port}`));
