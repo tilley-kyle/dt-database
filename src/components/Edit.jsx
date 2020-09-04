@@ -30,6 +30,7 @@ const Edit = ({ editElement, onMachineEdit, onEditSubmit }) => {
         <p className="totals">Total Landed: {totalLanded.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         <p className="totals">Gross Profit:  {grossProfit.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         <button type="submit" onClick={(e) => onEditSubmit(e)}>Submit Change</button>
+        <button type="submit" onClick={(e) => onEditSubmit(e)}>Submit Change</button>
       </div>
     </div>
   );
