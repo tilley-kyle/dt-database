@@ -8,6 +8,7 @@ const formattingController = require('./controllers/formattingController');
 const idGetter = require('./controllers/idGetter');
 const dbSearch = require('./controllers/dbSearch');
 const editData = require('./controllers/editData');
+const deleteData = require('./controllers/deleteData');
 
 const app = express();
 const port = 3001;
