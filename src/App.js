@@ -28,7 +28,7 @@ class App extends React.Component {
     this.onMachineClick = this.onMachineClick.bind(this);
     this.onMachineEdit = this.onMachineEdit.bind(this);
     this.onEditSubmit = this.onEditSubmit.bind(this);
-    thist.onDeleteSubmit = this.onDeleteSubmit.bind(this);
+    this.onDeleteSubmit = this.onDeleteSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -127,7 +127,7 @@ class App extends React.Component {
 
   onDeleteSubmit (e) {
     e.preventDefault(e);
-    console.log(hi)
+    const { editElement } = this.state;
     fetch('/delete', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', },
